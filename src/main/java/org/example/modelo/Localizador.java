@@ -26,7 +26,7 @@ public class Localizador {
         this.total = this.reservas.stream()
                 .mapToDouble(reserva -> reserva.getPrecio() * reserva.getCantidad())
                 .sum();
-        this.total -= Descuento.calcularDescuento( this);
+        this.total -= this.total * Descuento.calcularDescuentoReservas(this);
     }
 
     public List<Reserva> getReserva(){

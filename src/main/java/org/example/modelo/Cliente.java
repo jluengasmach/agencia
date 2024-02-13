@@ -7,8 +7,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
 
-import java.util.ArrayList;
-import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -16,15 +14,10 @@ import java.util.List;
 @FieldDefaults(level= AccessLevel.PRIVATE)
 public class Cliente {
     String nombre;
-    List<Localizador> localizadores;
+    int futuroDescuento = 0;
 
     public Cliente (String nombre){
         this.nombre = nombre;
-        this.localizadores = new ArrayList<>();
-    }
-
-    public void agregarLocalizador(Localizador localizador){
-        this.localizadores.add(localizador);
     }
 
     @Override
